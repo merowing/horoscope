@@ -1,3 +1,94 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+}
+header {
+    width: 100%;
+    height: 74px;
+    background-color: #313dfa;
+}
+.wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+header > div {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+header > div h2 {
+    text-transform: uppercase;
+    margin: 0;
+}
+header > div span {
+    font-weight: 700;
+    padding-top: 4px;
+    display: inline-block;
+}
+article {
+    font-family: Arial;
+    flex: 1;
+    padding-top: 20px;
+}
+article > img {
+    width: 100%;
+}
+article h3 {
+    color: #313dfa;
+    margin: 0;
+    padding-top: 20px;
+}
+article p {
+    line-height: 24px;
+}
+
+footer {
+    text-align: center;
+    padding: 8px 0;
+    color: darkgrey;
+}
+
+@media only screen and (orientation: portrait) {
+    header .wrapper {
+        padding: 0 20px;
+    }
+    .wrapper {
+        padding: 20px;
+    }
+    header > div {
+        color: #afdce5;
+    }
+    header h2 {
+        font-size: 20px;
+    }
+    header span {
+        font-size: 12px;
+        font-weight: normal;
+        padding-top: 6px;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    header h2 {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 280px) {
+    header h2 {
+        font-size: 14px;
+    }
+}
+
 div.select {
     display: inline-flex;
     align-items: center;
