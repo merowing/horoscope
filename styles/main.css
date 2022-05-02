@@ -11,7 +11,7 @@ main {
 }
 header {
     width: 100%;
-    height: 74px;
+    height: 70px;
     background-color: #313dfa;
 }
 .wrapper {
@@ -39,6 +39,7 @@ article {
     font-family: Arial;
     flex: 1;
     padding-top: 20px;
+    font-size: 0;
 }
 article > img {
     width: 100%;
@@ -48,8 +49,13 @@ article h3 {
     margin: 0;
     padding-top: 20px;
 }
-article p {
+section p {
     line-height: 24px;
+    margin: 0;
+    padding: 20px 0 30px 0;
+}
+section {
+    font-size: 16px;
 }
 
 footer {
@@ -58,13 +64,71 @@ footer {
     color: darkgrey;
 }
 
+article.main {
+    display: none;
+}
+article.main.active {
+    display: block;
+}
+
+.progress-block > div {
+    width: 100%;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+}
+.progress {
+    height: 6px;
+    margin-bottom: 20px;
+    background-color: red;
+}
+.progress-block {
+    display: none;
+}
+.progress-block.active {
+    display: block;
+}
+
+fieldset {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    display: none;
+}
+fieldset.active {
+    display: block;
+}
+fieldset legend {
+    text-align: center;
+    color: white;
+    background-color: #343b4d;
+    padding: 18px 0;
+    width: 100%;
+}
+fieldset ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f8;
+}
+fieldset ul li label {
+    display: inline-block;
+    padding: 26px;
+    cursor: pointer;
+}
+
 @media only screen and (orientation: portrait) {
     header .wrapper {
         padding: 0 20px;
     }
     .wrapper {
-        padding: 20px;
+        padding: 20px 20px 0 20px;
+        margin: 0;
     }
+    /* header {
+        position: fixed;
+    } */
     header > div {
         color: #afdce5;
     }
@@ -76,6 +140,20 @@ footer {
         font-weight: normal;
         padding-top: 6px;
     }
+    section p {
+        font-size: 15px;
+        padding: 14px 0;
+    }
+    section.sex > ul > li label {
+        padding: 22px 30px;
+    }
+    .footer {
+        padding: 6px 0;
+        font-size: 12px;
+    }
+    /* .article {
+        margin-top: 74px;
+    } */
 }
 
 @media only screen and (max-width: 360px) {
@@ -86,6 +164,12 @@ footer {
 @media only screen and (max-width: 280px) {
     header h2 {
         font-size: 14px;
+    }
+    section.sex > h3 {
+        font-size: 16px;
+    }
+    section.sex > ul > li label {
+        padding: 20px 12px;
     }
 }
 
@@ -120,12 +204,17 @@ select:focus + i.select-icon {
     background-color: #313dfa;
     font-weight: 700;
     color: white;
-    padding: 13px;
+    padding: 16px 0;
     width: 200px;
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
     border: 1px solid #313dfa;
     cursor: pointer;
+    margin: 20px auto;
+    display: none;
+}
+.next-button.active {
+    display: block;
 }
 .next-button:hover {
     box-shadow: inset 0 8px 10px rgba(0, 0, 0, 0.3);
