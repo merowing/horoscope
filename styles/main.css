@@ -97,6 +97,7 @@ fieldset {
     border: 0;
     margin: 0;
     display: none;
+    background-color: #f3f4f8;
 }
 fieldset.active {
     display: block;
@@ -115,7 +116,6 @@ fieldset ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    background-color: #f3f4f8;
 }
 fieldset.sex ul {
     flex-direction: row;
@@ -124,6 +124,18 @@ fieldset ul li label {
     display: block;
     padding: 26px;
     cursor: pointer;
+}
+.error {
+    background-color: lightpink;
+    margin: 20px 40px;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 14px;
+    color: orangered;
+    display: none;
+}
+.error.active {
+    display: block;
 }
 
 @media only screen and (orientation: portrait) {
@@ -184,33 +196,53 @@ fieldset ul li label {
     }
 }
 
-div.select {
-    display: inline-flex;
-    align-items: center;
-    border: 1px solid lightgray;
-    position: relative;
+.select {
+    text-align: center;
 }
-select {
-    border: 0;
+.select > ul li {
+    margin-top: 20px;
+}
+.select select {
+    border: 1px solid lightgray;
     appearance: none;
     outline: none;
-    padding: 8px 34px 8px 8px;
-    background: none;
+    height: 46px;
+    width: 180px;
+    padding: 0 10px;
+    font-size: 16px;
+    text-align: left;
+
+    background: url('../images/select-arrow.png') no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+    background-color: white;
 }
-.select-icon {
-    width: 15px;
-    height: 6px;
+.select img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+.select figcaption {
+    font-size: 14px;
+}
+/* .select-icon {
+    width: 19px;
+    height: 8px;
     position: absolute;
-    right: 8px;
+    right: 10px;
     z-index: -1;
     background: url('../images/select-arrow.png') no-repeat;
     background-position: center;
     background-size: contain;
 }
-select:focus + i.select-icon {
+select:focus-within + i.select-icon {
     transform: rotate(180deg);
     transition: transform 0.1s ease;
 }
+select:checked + i.select-icon {
+    transform: rotate(0deg);
+} */
 .next-button {
     background-color: #313dfa;
     font-weight: 700;
