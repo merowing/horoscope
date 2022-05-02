@@ -1,4 +1,3 @@
-// ---------
 const main = document.querySelector('.main');
 const progressBlock = document.querySelector('.progress-block');
 const progress = document.querySelector('.progress');
@@ -8,6 +7,7 @@ const fields = document.querySelectorAll('fieldset');
 const error = document.querySelector('.error');
 
 form.addEventListener('change', formChange);
+button.addEventListener('click', nextForm);
 
 function formChange() {
     button.classList.add('active');
@@ -21,8 +21,6 @@ function formChange() {
         behavior: 'smooth'
     });
 }
-
-button.addEventListener('click', nextForm);
 
 function nextForm(e) {
     e.preventDefault();

@@ -202,6 +202,9 @@ fieldset ul li label {
 .select > ul li {
     margin-top: 20px;
 }
+.select > ul li:last-child {
+    margin-bottom: 20px;
+}
 .select select {
     border: 1px solid lightgray;
     appearance: none;
@@ -217,13 +220,23 @@ fieldset ul li label {
     background-size: 20px;
     background-color: white;
 }
-.select img {
+
+.zodiac {
+    display: none;
+}
+.zodiac.active {
+    display: block;
+}
+.zodiac figure {
+    margin-top: 0;
+}
+.zodiac img {
     width: 100px;
     height: 100px;
     border: 1px solid red;
     box-sizing: border-box;
 }
-.select figcaption {
+.zodiac figcaption {
     font-size: 14px;
 }
 /* .select-icon {

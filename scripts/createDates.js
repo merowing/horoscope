@@ -1,6 +1,8 @@
 const daysBlock = document.querySelector('.days');
 const monthBlock = document.querySelector('.month');
 const yearBlock = document.querySelector('.years');
+const zodiacBlock = document.querySelector('.zodiac');
+const zodiacImageDefaultSrc = zodiacBlock.querySelector('img').src;
 
 const daysList = createDays();
 daysBlock.appendChild(daysList);
@@ -11,6 +13,7 @@ monthBlock.appendChild(monthList);
 const yearsList = createYears();
 yearBlock.appendChild(yearsList);
 
+daysBlock.addEventListener('change', setZodiac);
 monthBlock.addEventListener('change', day);
 yearBlock.addEventListener('change', day);
 
@@ -23,6 +26,30 @@ function day() {
 
     if(daysBlock.selectedIndex === -1) {
         daysBlock.selectedIndex = 0;
+    }
+
+    setZodiac();
+}
+
+function setZodiac() {
+    if(daysBlock.selectedIndex <= 0 || monthBlock.selectedIndex <= 0) {
+        zodiacBlock.classList.remove('active');
+    }else {
+        const day = parseInt(daysBlock.value);
+        const month = parseInt(monthBlock.value);
+
+        // getZodiac from zodiac.js
+        if(!isNaN(day) && !isNaN(month)) {
+            const { name } = getZodiac({day, month});
+
+            const zodiacFigcaption = zodiacBlock.querySelector('figcaption');
+            const zodiacImage = zodiacBlock.querySelector('img');
+            
+            zodiacFigcaption.innerText = name.ru;
+            zodiacImage.src = zodiacImageDefaultSrc + name.en + '.jpg';
+
+            zodiacBlock.classList.add('active');
+        }
     }
 }
 
