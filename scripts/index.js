@@ -54,10 +54,10 @@ function nextForm(e) {
     if(prevActiveField + 1 <= fields.length - 1) {
         fields[prevActiveField + 1].classList.add('active');
         this.classList.remove('active');
+    }else {
+        const formData = new FormData(form);
+        for(let el of formData) {
+            console.log(el);
+        } 
     }
-
-    // const formData = new FormData(form);
-    // for(let el of formData) {
-    //     console.log(el);
-    // }
 }

@@ -32,8 +32,12 @@ function day() {
 }
 
 function setZodiac() {
-    if(daysBlock.selectedIndex <= 0 || monthBlock.selectedIndex <= 0) {
+    if(daysBlock.selectedIndex <= 0 || monthBlock.selectedIndex <= 0 || yearBlock.selectedIndex <= 0) {
         zodiacBlock.classList.remove('active');
+
+        daysBlock.classList.remove('active');
+        monthBlock.classList.remove('active');
+        yearBlock.classList.remove('active');
     }else {
         const day = parseInt(daysBlock.value);
         const month = parseInt(monthBlock.value);
@@ -46,9 +50,13 @@ function setZodiac() {
             const zodiacImage = zodiacBlock.querySelector('img');
             
             zodiacFigcaption.innerText = name.ru;
-            zodiacImage.src = zodiacImageDefaultSrc + name.en + '.jpg';
+            zodiacImage.src = zodiacImageDefaultSrc + name.en + '.png';
 
             zodiacBlock.classList.add('active');
+
+            daysBlock.classList.add('active');
+            monthBlock.classList.add('active');
+            yearBlock.classList.add('active');
         }
     }
 }

@@ -9,14 +9,14 @@ main {
     justify-content: space-between;
     height: inherit;
 }
+.wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
 header {
     width: 100%;
     height: 70px;
     background-color: #313dfa;
-}
-.wrapper {
-    max-width: 600px;
-    margin: 0 auto;
 }
 header > div {
     display: flex;
@@ -106,8 +106,9 @@ fieldset legend {
     text-align: center;
     color: white;
     background-color: #343b4d;
-    padding: 18px 0;
+    padding: 18px;
     width: 100%;
+    box-sizing: border-box;
 }
 fieldset ul {
     display: flex;
@@ -138,64 +139,6 @@ fieldset ul li label {
     display: block;
 }
 
-@media only screen and (orientation: portrait) {
-    .questions {
-        width: auto;
-    }
-    header .wrapper {
-        padding: 0 20px;
-    }
-    .wrapper {
-        padding: 20px 20px 0 20px;
-        margin: 0;
-    }
-    /* header {
-        position: fixed;
-    } */
-    header > div {
-        color: #afdce5;
-    }
-    header h2 {
-        font-size: 20px;
-    }
-    header span {
-        font-size: 12px;
-        font-weight: normal;
-        padding-top: 6px;
-    }
-    section p {
-        font-size: 15px;
-        padding: 14px 0;
-    }
-    section.sex > ul > li label {
-        padding: 22px 30px;
-    }
-    .footer {
-        padding: 6px 0;
-        font-size: 12px;
-    }
-    /* .article {
-        margin-top: 74px;
-    } */
-}
-
-@media only screen and (max-width: 360px) {
-    header h2 {
-        font-size: 18px;
-    }
-}
-@media only screen and (max-width: 280px) {
-    header h2 {
-        font-size: 14px;
-    }
-    section.sex > h3 {
-        font-size: 16px;
-    }
-    section.sex > ul > li label {
-        padding: 20px 12px;
-    }
-}
-
 .select {
     text-align: center;
 }
@@ -210,7 +153,7 @@ fieldset ul li label {
     appearance: none;
     outline: none;
     height: 46px;
-    width: 180px;
+    width: 200px;
     padding: 0 10px;
     font-size: 16px;
     text-align: left;
@@ -220,7 +163,10 @@ fieldset ul li label {
     background-size: 20px;
     background-color: white;
 }
-
+.select select.active {
+    font-weight: 700;
+    color: #313dfa;
+}
 .zodiac {
     display: none;
 }
@@ -231,31 +177,14 @@ fieldset ul li label {
     margin-top: 0;
 }
 .zodiac img {
-    width: 100px;
-    height: 100px;
-    border: 1px solid red;
+    width: 120px;
+    height: 120px;
     box-sizing: border-box;
 }
 .zodiac figcaption {
     font-size: 14px;
 }
-/* .select-icon {
-    width: 19px;
-    height: 8px;
-    position: absolute;
-    right: 10px;
-    z-index: -1;
-    background: url('../images/select-arrow.png') no-repeat;
-    background-position: center;
-    background-size: contain;
-}
-select:focus-within + i.select-icon {
-    transform: rotate(180deg);
-    transition: transform 0.1s ease;
-}
-select:checked + i.select-icon {
-    transform: rotate(0deg);
-} */
+
 .next-button {
     background-color: #313dfa;
     font-weight: 700;
@@ -274,4 +203,58 @@ select:checked + i.select-icon {
 }
 .next-button:hover {
     box-shadow: inset 0 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* mobile */
+@media only screen and (orientation: portrait) {
+    .questions {
+        width: auto;
+    }
+    header .wrapper {
+        padding: 0 20px;
+    }
+    .wrapper {
+        padding: 20px 20px 0 20px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    header > div {
+        color: #afdce5;
+    }
+    header h2 {
+        font-size: 20px;
+    }
+    header span {
+        font-size: 12px;
+        font-weight: normal;
+        padding-top: 6px;
+    }
+    section p {
+        font-size: 15px;
+        padding: 14px 0;
+    }
+    fieldset ul li label {
+        padding: 22px 30px;
+    }
+    .footer {
+        padding: 6px 0;
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 360px) {
+    header h2 {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 281px) {
+    header h2 {
+        font-size: 14px;
+    }
+    fieldset h3 {
+        font-size: 16px;
+    }
+    fieldset ul li label {
+        padding: 20px 12px;
+    }
 }
