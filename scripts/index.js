@@ -18,7 +18,7 @@ form.addEventListener('change', formChange);
 
 function formChange() {
     button.classList.add('active');
-    
+
     window.scrollTo({
         top: button.getBoundingClientRect().top,
         behavior: 'smooth'
@@ -30,20 +30,21 @@ button.addEventListener('click', nextForm);
 function nextForm(e) {
     e.preventDefault();
     
-    const activeField = [...fields].findIndex(el => el.classList.contains('active'));
+    const prevActiveField = [...fields].findIndex(el => el.classList.contains('active'));
 
-    fields[activeField].classList.remove('active');
+    fields[prevActiveField].classList.remove('active');
 
-    if(activeField === 0) {
+    if(prevActiveField === 0) {
         main.classList.remove('active');
         progressBlock.classList.add('active');
     }
-
-    const widthPercent = Math.round((progressBlock.clientWidth / fields.length) / progressBlock.clientWidth * 100);
+    
+    const progressWidth = progressBlock.clientWidth;
+    const widthPercent = Math.round((progressWidth / (fields.length - prevActiveField)) / progressWidth * 100);
     progress.style.cssText = `width: ${widthPercent}%; transition: width 1s ease`;
 
-    if(activeField + 1 <= fields.length - 1) {
-        fields[activeField + 1].classList.add('active');
+    if(prevActiveField + 1 <= fields.length - 1) {
+        fields[prevActiveField + 1].classList.add('active');
         this.classList.remove('active');
     }
 

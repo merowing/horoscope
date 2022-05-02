@@ -70,6 +70,9 @@ article.main {
 article.main.active {
     display: block;
 }
+.questions {
+    width: 100%;
+}
 
 .progress-block > div {
     width: 100%;
@@ -108,18 +111,25 @@ fieldset legend {
 fieldset ul {
     display: flex;
     justify-content: space-evenly;
+    flex-direction: column;
     list-style: none;
     margin: 0;
     padding: 0;
     background-color: #f3f4f8;
 }
+fieldset.sex ul {
+    flex-direction: row;
+}
 fieldset ul li label {
-    display: inline-block;
+    display: block;
     padding: 26px;
     cursor: pointer;
 }
 
 @media only screen and (orientation: portrait) {
+    .questions {
+        width: auto;
+    }
     header .wrapper {
         padding: 0 20px;
     }
