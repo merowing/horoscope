@@ -4,35 +4,60 @@ const progress = document.querySelector('.progress');
 const form = document.querySelector('form.poll');
 const button = document.querySelector('.submit');
 const fields = document.querySelectorAll('fieldset');
+const error = document.querySelector('.error');
 
 form.addEventListener('change', formChange);
+button.addEventListener('click', nextForm);
 
 function formChange() {
     button.classList.add('active');
-    
+
+    if(error.classList.contains('active')) {
+        error.classList.remove('active');
+    }
+
     window.scrollTo({
         top: button.getBoundingClientRect().top,
         behavior: 'smooth'
     });
 }
 
-button.addEventListener('click', nextForm);
-
 function nextForm(e) {
     e.preventDefault();
     
-    const activeField = [...fields].findIndex(el => el.classList.contains('active'));
+    const prevActiveField = [...fields].findIndex(el => el.classList.contains('active'));
 
-    fields[activeField].classList.remove('active');
-
-    if(activeField === 0) {
+    if(prevActiveField === 0) {
         main.classList.remove('active');
-        progress.classList.add('active');
+        progressBlock.classList.add('active');
     }
 
-    if(activeField + 1 <= fields.length - 1) {
-        fields[activeField + 1].classList.add('active');
+    if(fields[prevActiveField].classList.contains('select')) {
+        const select = fields[prevActiveField].querySelectorAll('select');
+
+        const selectedItem = [...select].every(item => item.selectedIndex !== 0);
+        
+        error.classList.remove('active');
+        if(!selectedItem) {
+            error.classList.add('active');
+            return false;
+        }
+    }
+
+    fields[prevActiveField].classList.remove('active');
+
+    const progressWidth = progressBlock.clientWidth;
+    const widthPercent = Math.round((progressWidth / fields.length) / progressWidth * 100) * (prevActiveField + 1);
+    
+    progress.style.cssText = `width: ${widthPercent}%; transition: width 1s ease`;
+
+    if(prevActiveField + 1 <= fields.length - 1) {
+        fields[prevActiveField + 1].classList.add('active');
         this.classList.remove('active');
+    }else {
+        const formData = new FormData(form);
+        for(let el of formData) {
+            console.log(el);
+        } 
     }
-
 }

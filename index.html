@@ -36,17 +36,145 @@
                         <ul>
                             <li>
                                 <label>
-                                    <input type="radio" name="sex" />
+                                    <input type="radio" name="sex" value="0" />
                                     Женщина
                                 </label>
                             </li>
                             <li>
                                 <label>
-                                    <input type="radio" name="sex" />
+                                    <input type="radio" name="sex" value="1" />
                                     Мужчина
                                 </label>
                             </li>
                         </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>В какое время суток вы чувствуете себя наиболее комфортно?</legend>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="radio" name="day" value="0" />
+                                    Утро
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="day" value="1" />
+                                    День
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="day" value="2" />
+                                    Вечер
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="day" value="3" />
+                                    Ночь
+                                </label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Подскажите, мучает ли вас бессонница последнее время?</legend>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="radio" name="insomnia" value="0" />
+                                    Да
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="insomnia" value="1" />
+                                    Нет
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="insomnia" value="2" />
+                                    Иногда
+                                </label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Чувствуете ли вы в последнее время, что вам никак не удается осуществить ваши планы?</legend>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="radio" name="plans" value="0" />
+                                    Да
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="plans" value="1" />
+                                    Нет
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="plans" value="2" />
+                                    Иногда
+                                </label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Какой вы видите свою жизнь через 5 лет?</legend>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="radio" name="life" value="0" />
+                                    Брак, семья, дети, дом
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="life" value="1" />
+                                    Путешествия по миру
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="life" value="2" />
+                                    Успешная карьера
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="life" value="3" />
+                                    Всё вместе
+                                </label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <fieldset class="select">
+                        <legend>Введите дату своего рождения:</legend>
+                        <ul>
+                            <li>
+                                <select class="days" name="day"></select>
+                                <i class="select-icon"></i>
+                            </li>
+                            <li>
+                                <select class="month" name="month"></select>
+                                <i class="select-icon"></i>
+                            </li>
+                            <li>
+                                <select class="years" name="year"></select>
+                                <i class="select-icon"></i>
+                            </li>
+                        </ul>
+                        <div class="zodiac">
+                            <figure>
+                                <img src="./images/zodiac/" alt="" />
+                                <figcaption>Зодиак</figcaption>
+                            </figure>
+                        </div>
+                        <span class="error">Пожалуйста, выберите ответ</span>
                     </fieldset>
                     <button class="next-button submit" type="button">Далее</button>
                 </form>
@@ -56,6 +184,19 @@
             <span>2022 @ horoscope personal</span>
         </footer>
     </main>
+    <!--
+    <div class="select">
+        <select>
+            <option>Choose an option...</option>
+            <option>Select 1</option>
+            <option>Select 2</option>
+        </select>
+        <i class="select-icon"></i>
+    </div>
+    <button class="next-button">Далее</button>
+    -->
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/zodiac.js"></script>
+    <script src="./scripts/createDates.js"></script>
 </body>
 </html>
