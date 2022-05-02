@@ -1,3 +1,12 @@
+// const select = document.querySelector('select');
+
+// select.addEventListener('change', unFocus);
+
+function unFocus() {
+    document.activeElement.blur();
+}
+
+// ---------
 const main = document.querySelector('.main');
 const progressBlock = document.querySelector('.progress-block');
 const progress = document.querySelector('.progress');
@@ -27,8 +36,11 @@ function nextForm(e) {
 
     if(activeField === 0) {
         main.classList.remove('active');
-        progress.classList.add('active');
+        progressBlock.classList.add('active');
     }
+
+    const widthPercent = Math.round((progressBlock.clientWidth / fields.length) / progressBlock.clientWidth * 100);
+    progress.style.cssText = `width: ${widthPercent}%; transition: width 1s ease`;
 
     if(activeField + 1 <= fields.length - 1) {
         fields[activeField + 1].classList.add('active');
