@@ -3,8 +3,59 @@
 <head>
     <title>Гороскоп</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/main.css" />
 </head>
 <body>
-
+    <main>
+        <header>
+            <div class="wrapper">
+                <div>
+                    <h2>Новый гороскоп на 2022 год!</h3>
+                    <span>Узнайте, что вас ждёт.</span>
+                </div>
+            </div>
+        </header>
+        <article class="main active wrapper">
+            <img src="./images/horoscope.jpg" />
+            <section>
+                <h3>Узнайте, как 2022 год изменить жизнь каждого из нас!</h3>
+                <p>К сожалению, 2021 год принес нам немало неприятностей, даже откровенных проблем и несчастий. Не смотря на это, 3 знака зодиака очень скоро обретут долгожданное счастье! 2022 год затронет своими потрясениями каждого из нас.</p>
+            </section>
+        </article>
+        <article class="questions wrapper">
+            <section class="progress-block">
+                <div>
+                    <div class="progress"></div>
+                </div>
+            </section>
+            <section>
+                <form class="poll">
+                    <fieldset class="sex active">
+                        <legend>Укажите свой пол:</legend>
+                        <ul>
+                            <li>
+                                <label>
+                                    <input type="radio" name="sex" />
+                                    Женщина
+                                </label>
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="sex" />
+                                    Мужчина
+                                </label>
+                            </li>
+                        </ul>
+                    </fieldset>
+                    <button class="next-button submit" type="button">Далее</button>
+                </form>
+            </section>
+        </article>
+        <footer class="footer wrapper">
+            <span>2022 @ horoscope personal</span>
+        </footer>
+    </main>
+    <script src="./scripts/index.js"></script>
 </body>
 </html>

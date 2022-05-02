@@ -1,0 +1,221 @@
+html,
+body {
+    margin: 0;
+    height: 100%;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+}
+header {
+    width: 100%;
+    height: 70px;
+    background-color: #313dfa;
+}
+.wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+header > div {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+header > div h2 {
+    text-transform: uppercase;
+    margin: 0;
+}
+header > div span {
+    font-weight: 700;
+    padding-top: 4px;
+    display: inline-block;
+}
+article {
+    font-family: Arial;
+    flex: 1;
+    padding-top: 20px;
+    font-size: 0;
+}
+article > img {
+    width: 100%;
+}
+article h3 {
+    color: #313dfa;
+    margin: 0;
+    padding-top: 20px;
+}
+section p {
+    line-height: 24px;
+    margin: 0;
+    padding: 20px 0 30px 0;
+}
+section {
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    padding: 8px 0;
+    color: darkgrey;
+}
+
+article.main {
+    display: none;
+}
+article.main.active {
+    display: block;
+}
+
+.progress-block > div {
+    width: 100%;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+}
+.progress {
+    height: 6px;
+    margin-bottom: 20px;
+    background-color: red;
+}
+.progress-block {
+    display: none;
+}
+.progress-block.active {
+    display: block;
+}
+
+fieldset {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    display: none;
+}
+fieldset.active {
+    display: block;
+}
+fieldset legend {
+    text-align: center;
+    color: white;
+    background-color: #343b4d;
+    padding: 18px 0;
+    width: 100%;
+}
+fieldset ul {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f8;
+}
+fieldset ul li label {
+    display: inline-block;
+    padding: 26px;
+    cursor: pointer;
+}
+
+@media only screen and (orientation: portrait) {
+    header .wrapper {
+        padding: 0 20px;
+    }
+    .wrapper {
+        padding: 20px 20px 0 20px;
+        margin: 0;
+    }
+    /* header {
+        position: fixed;
+    } */
+    header > div {
+        color: #afdce5;
+    }
+    header h2 {
+        font-size: 20px;
+    }
+    header span {
+        font-size: 12px;
+        font-weight: normal;
+        padding-top: 6px;
+    }
+    section p {
+        font-size: 15px;
+        padding: 14px 0;
+    }
+    section.sex > ul > li label {
+        padding: 22px 30px;
+    }
+    .footer {
+        padding: 6px 0;
+        font-size: 12px;
+    }
+    /* .article {
+        margin-top: 74px;
+    } */
+}
+
+@media only screen and (max-width: 360px) {
+    header h2 {
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 280px) {
+    header h2 {
+        font-size: 14px;
+    }
+    section.sex > h3 {
+        font-size: 16px;
+    }
+    section.sex > ul > li label {
+        padding: 20px 12px;
+    }
+}
+
+div.select {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid lightgray;
+    position: relative;
+}
+select {
+    border: 0;
+    appearance: none;
+    outline: none;
+    padding: 8px 34px 8px 8px;
+    background: none;
+}
+.select-icon {
+    width: 15px;
+    height: 6px;
+    position: absolute;
+    right: 8px;
+    z-index: -1;
+    background: url('../images/select-arrow.png') no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+select:focus + i.select-icon {
+    transform: rotate(180deg);
+    transition: transform 0.1s ease;
+}
+.next-button {
+    background-color: #313dfa;
+    font-weight: 700;
+    color: white;
+    padding: 16px 0;
+    width: 200px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border: 1px solid #313dfa;
+    cursor: pointer;
+    margin: 20px auto;
+    display: none;
+}
+.next-button.active {
+    display: block;
+}
+.next-button:hover {
+    box-shadow: inset 0 8px 10px rgba(0, 0, 0, 0.3);
+}
