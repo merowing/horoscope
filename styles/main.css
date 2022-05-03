@@ -10,6 +10,7 @@ main {
     height: inherit;
 }
 .wrapper {
+    width: 600px;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -72,6 +73,10 @@ article.main.active {
 }
 .questions {
     width: 100%;
+    display: none;
+}
+.questions.active {
+    display: block;
 }
 
 .progress-block > div {
@@ -83,7 +88,7 @@ article.main.active {
     width: 0;
     height: 6px;
     margin-bottom: 20px;
-    background-color: red;
+    background-color: #b53e42;
 }
 .progress-block {
     display: none;
@@ -110,7 +115,7 @@ fieldset legend {
     width: 100%;
     box-sizing: border-box;
 }
-fieldset ul {
+ul {
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -205,14 +210,96 @@ fieldset ul li label {
     box-shadow: inset 0 8px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* mobile */
-@media (orientation: portrait) {
-    body {
-        /*height: calc(100% - 50px);*/
-        min-height: 100vh;
-        min-height: -webkit-fill-available;
-    }
+.statistics {
+    display: none;
 }
+.statistics.active {
+    display: block;
+}
+.statistics section > div.statistics-block {
+    display: block;
+    height: 50px;
+    background-color: lightgray;
+}
+.statistics section > *:not(button) {
+    margin: 30px 0;
+}
+div.statistics-progress {
+    width: 0;
+    background-color: #41932f;
+    font-weight: 700;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+}
+.statistics .success {
+    color: #41932f;
+}
+.statistics ul li {
+    padding-bottom: 20px;
+    font-size: 15px;
+    display: none;
+}
+.statistics ul li.show {
+    display: block;
+}
+.statistics ul li:last-child {
+    padding-bottom: 0;
+}
+.statistics ul li span {
+    display: inline-block;
+}
+.statistics h4.tape,
+.statistics h4.done {
+    text-transform: uppercase;
+}
+.statistics h4 {
+    margin-top: 10px;
+}
+h4.tape {
+    color: red;
+    display: none;
+}
+h4.done {
+    display: none;
+}
+h4.tape.show,
+h4.done.show {
+    display: block;
+}
+
+.summary {
+    display: none;
+    line-height: 22px;
+}
+.summary.active {
+    display: block;
+}
+.summary li.congratulation {
+    color: #313dfa;
+}
+.summary li.head {
+    font-size: 21px;
+    padding: 0;
+    margin: 0;
+}
+.summary ul li {
+    padding-bottom: 30px;
+}
+.summary ul li:first-child {
+    padding-top: 20px;
+}
+.summary-button {
+    width: 100%;
+    margin: 0;
+    background: url('../images/phone.png') no-repeat;
+    background-position: 20px 10px;
+    background-size: 30px;
+    background-color: #313dfa;
+    margin: 10px 0;
+}
+
+/* mobile */
 @media only screen and (orientation: portrait) {
     .questions {
         width: auto;
@@ -263,5 +350,10 @@ fieldset ul li label {
     }
     fieldset ul li label {
         padding: 20px 12px;
+    }
+    .summary-button {
+        font-size: 13px;
+        background-size: 26px;
+        background-position: 10px;
     }
 }

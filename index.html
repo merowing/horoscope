@@ -16,14 +16,58 @@
                 </div>
             </div>
         </header>
-        <article class="main active wrapper">
+        <article class="main wrapper active">
             <img src="./images/horoscope.jpg" />
             <section>
                 <h3>Узнайте, как 2022 год изменить жизнь каждого из нас!</h3>
                 <p>К сожалению, 2021 год принес нам немало неприятностей, даже откровенных проблем и несчастий. Не смотря на это, 3 знака зодиака очень скоро обретут долгожданное счастье! 2022 год затронет своими потрясениями каждого из нас.</p>
             </section>
         </article>
-        <article class="questions wrapper">
+        <article class="statistics wrapper">
+            <section>
+                <h4>Обработка ваших данных:</h4>
+                <div class="statistics-block">
+                    <div class="statistics-progress"></div>
+                </div>
+                <ul>
+                    <li><span>Анализ введенных данных.......</span><span class="success">Выполнено!</span></li>
+                    <li><span>Коррекция астрологического знака.......</span><span class="success">Выполнено!</span></li>
+                    <li><span>Расчет вариаций ответов......</span><span class="success">Выполнено!</span></li>
+                    <li><span>Генерация предсказания.......</span><span class="success">Выполнено</span></li>
+                    <li><span>Сохранение результата.......</span><span class="success">Выполнено</span></li>
+                    <li><span>Поиск свободного оператора.......</span><span class="success">Выполнено</span></li>
+                    <li><span>Начало озвучки и записи аудио сообщения.......</span></li>
+                </ul>
+                <h4 class="tape">Идеёт запись!</h4>
+                <h4 class="done">Готово!</h4>
+                <button class="statistics-button next-button">Далее</button>
+            </section>
+        </article>
+        <article class="summary wrapper">
+            <section>
+                <ul>
+                    <li>
+                        <strong>Спасибо за ваши ответы!</strong>
+                    </li>
+                    <li class="congratulation">
+                        <strong>Поздравляем! Прослушать свой персональный гороскоп возможно уже сейчас!</strong>
+                    </li>
+                    <li class="head">
+                        <strong>2022 год вас ошарашит!</strong>
+                    </li>
+                    <li>
+                        Вас ждёт то, чего вы никак не ожидали. Первые известия вы получите совсем скоро, возможно это 17-18 ноября!
+                    </li>
+                    <li>
+                        Что бы прослушать аудио-сообщение, необходимо нажать на кнопку ниже и позвонить со своего мобильного телефона. Позвоните и прослушайте очень серьезную информацию!
+                    </li>
+                </ul>
+                <button class="summary-button next-button active">Звонить и слушать</button>
+            </section>
+        </article>
+        <div class="bg"></div>
+        <div class="information"></div>
+        <article class="questions wrapper active">
             <section class="progress-block">
                 <div>
                     <div class="progress"></div>
@@ -48,7 +92,7 @@
                             </li>
                         </ul>
                     </fieldset>
-                    <fieldset>
+                    <!-- <fieldset>
                         <legend>В какое время суток вы чувствуете себя наиболее комфортно?</legend>
                         <ul>
                             <li>
@@ -175,7 +219,7 @@
                             </figure>
                         </div>
                         <span class="error">Пожалуйста, выберите ответ</span>
-                    </fieldset>
+                    </fieldset> -->
                     <button class="next-button submit" type="button">Далее</button>
                 </form>
             </section>
@@ -197,6 +241,6 @@
     -->
     <script src="./scripts/index.js"></script>
     <script src="./scripts/zodiac.js"></script>
-    <script src="./scripts/createDates.js"></script>
+    <!-- <script src="./scripts/createDates.js"></script> -->
 </body>
 </html>
