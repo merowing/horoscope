@@ -1,13 +1,19 @@
 html,
 body {
     margin: 0;
+    min-height: 100%;
     height: 100%;
+    position: relative;
 }
 main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: inherit;
+}
+main.fixed {
+    width: 100%;
+    position: fixed;
 }
 .wrapper {
     width: 600px;
@@ -299,6 +305,61 @@ h4.done.show {
     margin: 10px 0;
 }
 
+.bg {
+    background-color: black;
+    opacity: 0.7;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    display: none;
+}
+.information {
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    display: none;
+    margin: 0 auto;
+}
+.information > div {
+    background-color: white;
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.information ul {
+    margin-top: 60px;
+    display: inline-block;
+    width: 100%;
+}
+.information li {
+    display: flex;
+    border-top: 1px solid lightgray;
+    word-break: break-all;
+}
+.information span:first-child {
+    font-weight: 700;
+    width: 30%;
+}
+.information span {
+    width: 70%;
+    padding: 20px 10px;
+}
+.information-close {
+    position: absolute;
+    right: 0;
+    height: 60px;
+    width: 60px;
+    background: url('../images/close-icon.png') no-repeat;
+    background-size: 20px;
+    background-position: center;
+}
+
 /* mobile */
 @media only screen and (orientation: portrait) {
     .questions {
@@ -355,5 +416,8 @@ h4.done.show {
         font-size: 13px;
         background-size: 26px;
         background-position: 10px;
+    }
+    .information li {
+        font-size: 13px;
     }
 }

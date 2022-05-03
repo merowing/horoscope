@@ -122,10 +122,17 @@ function statistics() {
 }
 
 function summary() {
-    summaryBlock.classList.add('active');
-
+    const bg = document.querySelector('.bg');
+    const information = document.querySelector('.information');
+    const infoUl = information.querySelector('ul');
     const summaryButton = document.querySelector('.summary-button');
+    const close = document.querySelector('.information-close');
+    const mainBlock = document.querySelector('main');
+
     summaryButton.addEventListener('click', getDataFromSever);
+    close.addEventListener('click', toggleShowInformation);
+
+    summaryBlock.classList.add('active');
 
     function getDataFromSever() {
         const url = "https://swapi.dev/api/people/1/";
@@ -138,10 +145,37 @@ function summary() {
         fetch(url, opts)
             .then(res => res.json())
             .then(response => {
-                console.log(response);
+                const fragment = document.createDocumentFragment();
+                const elems = Object.keys(response).reduce((prev, current) => {
+                    const key = current;
+                    const value = response[key];
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <span>${key}</span>
+                        <span>${value}</span>
+                    `;
+                    prev.appendChild(li);
+                    
+                    return prev;
+                }, fragment);
+                infoUl.appendChild(elems);
+                
+                toggleShowInformation();
             })
             .catch(error => {
                 console.log(error);
             });
+    }
+
+    function toggleShowInformation() {
+        if(mainBlock.classList.contains('fixed')) {
+            bg.style.display = 'none';
+            information.style.display = 'none';
+            mainBlock.classList.remove('fixed');
+        }else {
+            bg.style.display = 'block';
+            information.style.display = 'block';
+            mainBlock.classList.add('fixed');
+        }
     }
 }
