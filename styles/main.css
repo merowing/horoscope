@@ -8,6 +8,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     height: inherit;
+    min-height: -webkit-fill-available;
 }
 .wrapper {
     max-width: 600px;
@@ -40,7 +41,6 @@ article {
     flex-grow: 1;
     padding-top: 20px;
     font-size: 0;
-    height: 100vh;
 }
 article > img {
     width: 100%;
