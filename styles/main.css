@@ -37,9 +37,10 @@ header > div span {
 }
 article {
     font-family: Arial;
-    flex: 1;
+    flex-grow: 1;
     padding-top: 20px;
     font-size: 0;
+    height: 100vh;
 }
 article > img {
     width: 100%;
