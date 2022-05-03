@@ -5,8 +5,9 @@ Visit online [demo page](https://merowing.github.io/horoscope)
 or
 
 1. Create a folder
-2. Open terminal and run command: git pull https://github.com/merowing/horoscope.github.io.git
-3. Run index.html
+2. git init
+3. Open terminal and run command: git pull https://github.com/merowing/horoscope.git
+4. Run index.html
 
 ## Description
 
