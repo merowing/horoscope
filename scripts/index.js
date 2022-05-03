@@ -15,9 +15,9 @@ button.addEventListener('click', nextForm);
 function formChange() {
     button.classList.add('active');
 
-    // if(error.classList.contains('active')) {
-    //     error.classList.remove('active');
-    // }
+    if(error.classList.contains('active')) {
+        error.classList.remove('active');
+    }
 
     window.scrollTo({
         top: button.getBoundingClientRect().top,
