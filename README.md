@@ -1,6 +1,6 @@
 ## How to run
 
-Visit online [demo page](https://horoscope.github.io)
+Visit online [demo page](https://merowing.github.io/horoscope)
 
 or
 
