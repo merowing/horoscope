@@ -2,7 +2,7 @@ const daysBlock = document.querySelector('.days');
 const monthBlock = document.querySelector('.month');
 const yearBlock = document.querySelector('.years');
 const zodiacBlock = document.querySelector('.zodiac');
-const zodiacImageDefaultSrc = zodiacBlock.querySelector('img').src;
+const zodiacImageDefaultSrc = './images/zodiac/';
 
 const daysList = createDays();
 daysBlock.appendChild(daysList);
