@@ -122,15 +122,11 @@ function statistics() {
 }
 
 function summary() {
-    const bg = document.querySelector('.bg');
     const information = document.querySelector('.information');
-    const infoUl = information.querySelector('ul');
+    const infoList = information.querySelector('ul');
     const summaryButton = document.querySelector('.summary-button');
-    const close = document.querySelector('.information-close');
-    const mainBlock = document.querySelector('main');
-
+    
     summaryButton.addEventListener('click', getDataFromSever);
-    close.addEventListener('click', toggleShowInformation);
 
     summaryBlock.classList.add('active');
 
@@ -158,24 +154,13 @@ function summary() {
                     
                     return prev;
                 }, fragment);
-                infoUl.appendChild(elems);
-                
-                toggleShowInformation();
+
+                infoList.innerHTML = '';
+                infoList.appendChild(elems);
+                information.classList.add('show');
             })
             .catch(error => {
                 console.log(error);
             });
-    }
-
-    function toggleShowInformation() {
-        if(mainBlock.classList.contains('fixed')) {
-            bg.style.display = 'none';
-            information.style.display = 'none';
-            mainBlock.classList.remove('fixed');
-        }else {
-            bg.style.display = 'block';
-            information.style.display = 'block';
-            mainBlock.classList.add('fixed');
-        }
     }
 }
